@@ -7,7 +7,7 @@ public class Main {
     public static Employee[] repository = new Employee[10];
 
     // Общая сумма затрат на выплаты...
-    public static double sumSalary() {
+    public static double calculateSumSalary() {
         double totalSalary = 0;
         for (Employee employee : repository) {
             if (employee != null) {
@@ -18,7 +18,7 @@ public class Main {
     }
 
     // Максимальная ставка...
-    public static Employee maxSalary() {
+    public static Employee calculateMaxSalary() {
         double maxSalary = Double.MIN_VALUE;
         int i = 0;
         for (int in = 0; in < repository.length; in++) {
@@ -31,7 +31,7 @@ public class Main {
     }
 
     // Минимальная ставка...
-    public static Employee minSalary() {
+    public static Employee calculateMinSalary() {
         double minSalary = Double.MAX_VALUE;
         int i = 0;
         for (int in = 0; in < repository.length; in++) {
@@ -44,7 +44,7 @@ public class Main {
     }
 
     // Среднее значение...
-    public static double middleSalary() {
+    public static double calculateMiddleSalary() {
         int middle = 0;
         double totalSalary = 0;
         for (Employee employee : repository) {
@@ -84,16 +84,16 @@ public class Main {
         System.out.print(Arrays.toString(repository));
         System.out.println();
         //Сумма зп за месяц...
-        double totalSalary = Main.sumSalary();
+        double totalSalary = Main.calculateSumSalary();
         System.out.println("Сумма затрат на выплаты, за месяц составила: " + totalSalary);
         //Максимальное значение зп...
-        Employee maxSalary = Main.maxSalary();
+        Employee maxSalary = Main.calculateMaxSalary();
         System.out.println("Максимальная зарплата у сотрудника: " + maxSalary);
         //Минимальное значение зп...
-        Employee minSalary = Main.minSalary();
+        Employee minSalary = Main.calculateMinSalary();
         System.out.println("Минимальная зарплата у сотрудника: " + minSalary);
         //Среднее значение зп...
-        System.out.println("Среднее значение зарплаты составило: " + middleSalary());
+        System.out.println("Среднее значение зарплаты составило: " + calculateMiddleSalary());
         // Распечатать ФИО всех сотрудников...
         Employee printFullName = Main.printFullName();
         System.out.println(printFullName);
