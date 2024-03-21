@@ -5,7 +5,7 @@ public class Employee {
     private int department;
     private double salary;
     static private int staticId = 1;
-    private int id;
+    private final int id;
 
 
     public Employee(String fullName, int department, double salary) {
@@ -28,7 +28,7 @@ public class Employee {
         return salary;
     }
 
-    public int getOwnID() {
+    public int getId() {
         return id;
     }
 
@@ -42,20 +42,23 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "\n" + "№" + id + " " + "ФИО: " + fullName + ". " + "Отдел: " + department +
+        return "№" + id + " " + "ФИО: " + fullName + ". " + "Отдел: " + department +
                 ". " + "Зарплата: " + salary;
 
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
+        if (this == o) {
             return true;
-        if (o == null || getClass() != o.getClass())
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
+        }
         Employee employee = (Employee) o;
-        return getDepartment() == employee.getDepartment() && getSalary() == employee.getSalary()
-                && getOwnID() == employee.getOwnID() && Objects.equals(getFullName(), employee.getFullName());
+        return getId() == employee.getId();
+
+
     }
 
     @Override
