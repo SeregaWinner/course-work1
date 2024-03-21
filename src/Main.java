@@ -89,7 +89,7 @@ public class Main {
     public static void increaseSalary(double percentForPerson) {
         for (Employee employee : REPOSITORY) {
             if (employee != null) {
-                employee.setSalary(employee.getSalary() * (1 + (double) percentForPerson / 100));
+                employee.setSalary(employee.getSalary() * (1 +  percentForPerson / 100));
             }
         }
     }
@@ -188,7 +188,7 @@ public class Main {
         }
     }
     //Вывод информации...
-    public static void printInfo(Employee[] REPOSITORY, int i) {
+    public static void printInfo(Employee [] REPOSITORY, int i) {
         System.out.print("№" + REPOSITORY[i].getId() + ", ");
         System.out.print("Ф.И.О " + REPOSITORY[i].getFullName() + ", ");
         System.out.print("зарплата " + REPOSITORY[i].getSalary() + ".");
